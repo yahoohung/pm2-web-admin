@@ -72,13 +72,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/bootstrap/dist/css/bootstrap.min.css":
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "./pages/_document.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -92,13 +85,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_document___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_document__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components__ = __webpack_require__("styled-components");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_styled_components__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bootstrap_dist_css_bootstrap_min_css__ = __webpack_require__("./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_bootstrap_dist_css_bootstrap_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_bootstrap_dist_css_bootstrap_min_css__);
 
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = '/Users/mc/Projects/playground/pm2-admin/pages/_document.js';
+var _jsxFileName = '/Users/mc/Projects/pm2-web-admin/pages/_document.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -111,7 +102,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -133,7 +123,7 @@ var MyDocument = function (_Document) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 16
           }
         },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -141,38 +131,34 @@ var MyDocument = function (_Document) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 18
+              lineNumber: 17
             }
           },
           this.props.styleTags,
-           false ? React.createElement('link', {
-            rel: 'stylesheet',
-            type: 'text/css',
-            href: '/static/styles.css?' + this.props.__NEXT_DATA__.buildStats['app.js'].hash,
-            __source: {
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: '/_next/static/style.css', __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 19
             }
-          }) : ''
+          })
         ),
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'body',
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 30
+              lineNumber: 21
             }
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_document__["Main"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 31
+              lineNumber: 22
             }
           }),
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_document__["NextScript"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 23
             }
           })
         )
@@ -195,15 +181,17 @@ var MyDocument = function (_Document) {
                     return sheet.collectStyles(__WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(App, _extends({}, props, {
                       __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 9
+                        lineNumber: 8
                       }
                     })));
                   };
                 });
                 styleTags = sheet.getStyleElement();
+
+                console.log(styleTags);
                 return _context.abrupt('return', _extends({}, page, { styleTags: styleTags }));
 
-              case 4:
+              case 5:
               case 'end':
                 return _context.stop();
             }

@@ -24,7 +24,6 @@ const job = new CronJob('*/5 * * * * *', async () => {
     const list = await pm2Wrapper.list()
     io.emit('pm2', list);    
 
-
   }catch(err){
     // TODO:
     console.log(err)
@@ -34,21 +33,18 @@ const job = new CronJob('*/5 * * * * *', async () => {
   /* This function is executed when the job stops */
 
 },
-  true, /* Start the job right now */
+  false, /* Start the job right now */
   timeZone /* Time zone of this job. */
 );
 
-
-
 io.on('connection', function (socket) {
   console.log('connected')
-
 });
-
-     
 
 nextApp.prepare()
 .then(() => {
+
+  job.start();
 
   app.get('/', (req, res) => {
     return nextApp.render(req, res, '/', req.query)
@@ -58,9 +54,9 @@ nextApp.prepare()
     return nextHandler(req, res)
   })
 
-  server.listen(3000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log(`> Ready on http://localhost:${port}`)
   })
 })
 

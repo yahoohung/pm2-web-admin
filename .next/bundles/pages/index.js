@@ -8332,34 +8332,34 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 
 "use strict";
 /* unused harmony export Alert */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Container; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Row; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Col; });
-/* unused harmony export Navbar */
-/* unused harmony export NavbarBrand */
-/* unused harmony export NavbarToggler */
-/* unused harmony export Nav */
-/* unused harmony export NavItem */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return Container; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return Row; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Col; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return Navbar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return NavbarBrand; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return NavbarToggler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return Nav; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return NavItem; });
 /* unused harmony export NavDropdown */
-/* unused harmony export NavLink */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return NavLink; });
 /* unused harmony export Breadcrumb */
 /* unused harmony export BreadcrumbItem */
-/* unused harmony export Button */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Button; });
 /* unused harmony export ButtonDropdown */
-/* unused harmony export ButtonGroup */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ButtonGroup; });
 /* unused harmony export ButtonToolbar */
 /* unused harmony export Dropdown */
 /* unused harmony export DropdownItem */
 /* unused harmony export DropdownMenu */
 /* unused harmony export DropdownToggle */
 /* unused harmony export Fade */
-/* unused harmony export Badge */
-/* unused harmony export Card */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Badge; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Card; });
 /* unused harmony export CardLink */
 /* unused harmony export CardGroup */
 /* unused harmony export CardDeck */
 /* unused harmony export CardColumns */
-/* unused harmony export CardBody */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return CardBody; });
 /* unused harmony export CardBlock */
 /* unused harmony export CardFooter */
 /* unused harmony export CardHeader */
@@ -8371,9 +8371,9 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 /* unused harmony export CarouselItem */
 /* unused harmony export CarouselIndicators */
 /* unused harmony export CarouselCaption */
-/* unused harmony export CardSubtitle */
-/* unused harmony export CardText */
-/* unused harmony export CardTitle */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CardSubtitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return CardText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return CardTitle; });
 /* unused harmony export Popover */
 /* unused harmony export PopoverContent */
 /* unused harmony export PopoverBody */
@@ -8407,7 +8407,7 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 /* unused harmony export TabContent */
 /* unused harmony export TabPane */
 /* unused harmony export Jumbotron */
-/* unused harmony export Collapse */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return Collapse; });
 /* unused harmony export ListGroupItem */
 /* unused harmony export ListGroupItemText */
 /* unused harmony export ListGroupItemHeading */
@@ -16424,7 +16424,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__ = __webpack_require__("./node_modules/isomorphic-fetch/fetch-npm-browserify.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_isomorphic_fetch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_reactstrap__ = __webpack_require__("./node_modules/reactstrap/dist/reactstrap.es.js");
-var _jsxFileName = '/Users/mc/Projects/playground/pm2-admin/pages/index.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__assets_sass_styles_scss__ = __webpack_require__("./assets/sass/styles.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__assets_sass_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__assets_sass_styles_scss__);
+var _jsxFileName = '/Users/mc/Projects/pm2-web-admin/pages/index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16447,6 +16449,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
+
 var HomePage = function (_Component) {
   _inherits(HomePage, _Component);
 
@@ -16462,20 +16467,32 @@ var HomePage = function (_Component) {
       });
     };
 
+    _this.toggle = _this.toggle.bind(_this);
+
     _this.state = {
+      isOpen: false,
       processes: []
     };
 
     return _this;
   }
-  // fetch old messages data from the server
-  // static async getInitialProps({ req }) {
-  //   const response = await fetch('http://localhost:3000/pm2')
-  //   const processes = await response.json()
-  //   return { processes }
-  // }
 
   _createClass(HomePage, [{
+    key: 'toggle',
+    value: function toggle() {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    }
+
+    // fetch old messages data from the server
+    // static async getInitialProps({ req }) {
+    //   const response = await fetch('http://localhost:3000/pm2')
+    //   const processes = await response.json()
+    //   return { processes }
+    // }
+
+  }, {
     key: 'componentDidMount',
 
 
@@ -16483,7 +16500,7 @@ var HomePage = function (_Component) {
 
     // connect to WS server and listen event
     value: function componentDidMount() {
-      this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client___default()('http://localhost:3000/', { path: '/foo/bar' });
+      this.socket = __WEBPACK_IMPORTED_MODULE_1_socket_io_client___default()('http://localhost:9000/', { path: '/foo/bar' });
       this.socket.on('pm2', this.handleProcesses);
     }
 
@@ -16503,50 +16520,227 @@ var HomePage = function (_Component) {
     value: function render() {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["b" /* Container */],
-        {
-          __source: {
+        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["k" /* Container */],
+        { fluid: true, __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 89
           }
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_3_reactstrap__["c" /* Row */],
-          {
-            __source: {
+          __WEBPACK_IMPORTED_MODULE_3_reactstrap__["o" /* Navbar */],
+          { color: 'faded', light: true, expand: 'md', __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 90
             }
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_3_reactstrap__["a" /* Col */],
-            {
-              __source: {
+            __WEBPACK_IMPORTED_MODULE_3_reactstrap__["p" /* NavbarBrand */],
+            { href: '/', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 53
+                lineNumber: 91
+              }
+            },
+            'PM2 Web Admin'
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_reactstrap__["q" /* NavbarToggler */], { onClick: this.toggle, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 92
+            }
+          }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_3_reactstrap__["j" /* Collapse */],
+            { isOpen: this.state.isOpen, navbar: true, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 93
               }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'ul',
-              {
-                __source: {
+              __WEBPACK_IMPORTED_MODULE_3_reactstrap__["l" /* Nav */],
+              { className: 'ml-auto', navbar: true, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 54
+                  lineNumber: 94
                 }
               },
-              this.state.processes.map(function (thisProcess) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  { key: thisProcess.pid, __source: {
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3_reactstrap__["m" /* NavItem */],
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 95
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_3_reactstrap__["n" /* NavLink */],
+                  { href: 'https://github.com/yahoohung/pm2-web-admin', __source: {
                       fileName: _jsxFileName,
-                      lineNumber: 56
+                      lineNumber: 96
                     }
                   },
-                  thisProcess.name
-                );
-              })
+                  'Github'
+                )
+              )
             )
           )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_3_reactstrap__["r" /* Row */],
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 101
+            }
+          },
+          this.state.processes.map(function (thisProcess) {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_3_reactstrap__["i" /* Col */],
+              { xs: '12', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 103
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_3_reactstrap__["d" /* Card */],
+                { key: thisProcess.pid, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 104
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_3_reactstrap__["e" /* CardBody */],
+                  { className: 'd-flex align-items-center', __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 105
+                    }
+                  },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'd-flex align-items-end flex-column', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 106
+                      }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: 'btn', color: 'primary', outline: true, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 107
+                        }
+                      },
+                      'CPU ',
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["a" /* Badge */],
+                        { color: 'secondary', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 108
+                          }
+                        },
+                        thisProcess.monit.cpu,
+                        '%'
+                      )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'div',
+                      { className: 'btn', color: 'primary', outline: true, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 110
+                        }
+                      },
+                      'RAM ',
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["a" /* Badge */],
+                        { color: 'secondary', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 111
+                          }
+                        },
+                        Math.ceil(thisProcess.monit.memory / 1000 / 1000),
+                        'M'
+                      )
+                    )
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                      __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 114
+                      }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      __WEBPACK_IMPORTED_MODULE_3_reactstrap__["h" /* CardTitle */],
+                      {
+                        __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 115
+                        }
+                      },
+                      thisProcess.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      __WEBPACK_IMPORTED_MODULE_3_reactstrap__["f" /* CardSubtitle */],
+                      {
+                        __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 116
+                        }
+                      },
+                      thisProcess.pm2_env.pm_cwd
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_reactstrap__["g" /* CardText */], {
+                      __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 117
+                      }
+                    })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'ml-auto', __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 119
+                      }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      __WEBPACK_IMPORTED_MODULE_3_reactstrap__["c" /* ButtonGroup */],
+                      {
+                        __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 120
+                        }
+                      },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["b" /* Button */],
+                        { color: 'danger', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 121
+                          }
+                        },
+                        'Stop'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["b" /* Button */],
+                        { color: 'warning', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 122
+                          }
+                        },
+                        'Reload'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_3_reactstrap__["b" /* Button */],
+                        { color: 'info', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 123
+                          }
+                        },
+                        'Restart'
+                      )
+                    )
+                  )
+                )
+              )
+            );
+          })
         )
       );
     }
@@ -16577,8 +16771,8 @@ var _default = HomePage;
     return;
   }
 
-  reactHotLoader.register(HomePage, 'HomePage', '/Users/mc/Projects/playground/pm2-admin/pages/index.js');
-  reactHotLoader.register(_default, 'default', '/Users/mc/Projects/playground/pm2-admin/pages/index.js');
+  reactHotLoader.register(HomePage, 'HomePage', '/Users/mc/Projects/pm2-web-admin/pages/index.js');
+  reactHotLoader.register(_default, 'default', '/Users/mc/Projects/pm2-web-admin/pages/index.js');
   leaveModule(module);
 })();
 

@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class MyDocument extends Document {
   static async getInitialProps ({ renderPage, req }) {
@@ -8,7 +7,7 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
     const styleTags = sheet.getStyleElement();
-
+    console.log(styleTags)
     return { ...page, styleTags }
   }
 
@@ -17,15 +16,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {this.props.styleTags}
-          {process.env.NODE_ENV == 'production'
-            ? <link
-                rel="stylesheet"
-                type="text/css" 
-                href={`/static/styles.css?${this.props.__NEXT_DATA__
-                  .buildStats['app.js'].hash}`}
-              />
-            : ''}   
-             
+          <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
         <body>
           <Main />
