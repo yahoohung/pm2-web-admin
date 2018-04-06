@@ -29,6 +29,8 @@ import {
 
 import "../assets/sass/styles.scss";
 
+const isServer = process.browser || true;
+
 class HomePage extends Component {
   constructor(props) {
     super(props)
@@ -41,6 +43,12 @@ class HomePage extends Component {
     }
   
   }
+
+  static async getInitialProps ({ req }) {
+    return req
+      ? { token: req.auth.token }
+      : { token: window.token }
+  }  
 
   toggle() {
     this.setState({
@@ -63,10 +71,19 @@ class HomePage extends Component {
 
   // connect to WS server and listen event
   componentDidMount() {
-    this.socket = io('http://localhost:9000/', {path: '/foo/bar'})
+
+    this.socket = io('http://localhost:9000/', {
+      path: '/foo/bar',
+      query: `auth_token=${this.props.token}`
+    })
+
+    this.socket.emit('pm2 start', 'yo');    
+
+    this.socket.on('error', function(err) {
+      console.log('socket error', err)
+    });
+
     this.socket.on('pm2', this.handleProcesses)
-
-
   }
 
   // close socket connection

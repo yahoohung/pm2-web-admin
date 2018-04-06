@@ -89,7 +89,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jsxFileName = '/Users/mc/Projects/pm2-web-admin/pages/_document.js';
+var _jsxFileName = '/Users/mc/Projects/open-source/pm2-web-admin/pages/_document.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -123,7 +123,7 @@ var MyDocument = function (_Document) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 17
           }
         },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
@@ -131,13 +131,13 @@ var MyDocument = function (_Document) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 17
+              lineNumber: 18
             }
           },
           this.props.styleTags,
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('link', { rel: 'stylesheet', href: '/_next/static/style.css', __source: {
               fileName: _jsxFileName,
-              lineNumber: 19
+              lineNumber: 20
             }
           })
         ),
@@ -146,21 +146,33 @@ var MyDocument = function (_Document) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 22
             }
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_document__["Main"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 22
+              lineNumber: 23
             }
           }),
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_document__["NextScript"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
+              lineNumber: 24
             }
-          })
+          }),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'script',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 25
+              }
+            },
+            'var token = \'',
+            this.props.token,
+            '\';'
+          )
         )
       );
     }
@@ -170,7 +182,7 @@ var MyDocument = function (_Document) {
       var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
         var renderPage = _ref.renderPage,
             req = _ref.req;
-        var sheet, page, styleTags;
+        var sheet, page, styleTags, token;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -187,9 +199,8 @@ var MyDocument = function (_Document) {
                   };
                 });
                 styleTags = sheet.getStyleElement();
-
-                console.log(styleTags);
-                return _context.abrupt('return', _extends({}, page, { styleTags: styleTags }));
+                token = req.auth.token || null;
+                return _context.abrupt('return', _extends({}, page, { styleTags: styleTags, token: token }));
 
               case 5:
               case 'end':

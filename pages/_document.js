@@ -7,8 +7,9 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
     const styleTags = sheet.getStyleElement();
-    console.log(styleTags)
-    return { ...page, styleTags }
+    const token = req.auth.token || null;
+
+    return { ...page, styleTags, token }
   }
 
   render () {
@@ -21,6 +22,9 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <script>
+            var token = '{this.props.token}';
+          </script>
         </body>
       </html>
     )
